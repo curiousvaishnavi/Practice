@@ -7,28 +7,80 @@ html,body{
     height: 100%;
     width: 100%;
     background-color: black;
-    overflow: hidden;
-}
-main{
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-button{
-    padding: 15px 30px;
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    cursor: pointer;
-    z-index: 1;
+
+main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    
 }
-button:active{
+
+#card{
+    height: 200px;
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#card p{
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 800;
+}
+#h1,#button{
+    color: black;
+}
+
+.progress{
+    padding: 20px 20px;
+}
+
+#outer{
+    height: 20px;
+    width: 100%;
+    background-color: rgb(176, 176, 171);
+    border-radius: 7px;
+}
+
+#inner{
+    height: 20px;
+    width: 0%;
+    background-color:green;
+    border-radius: 7px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    
+}
+
+.container h1{
+    font-weight: 900;
+    display: inline;
+}
+
+.container button{
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(15, 131, 15);
+    color: white;
+    font-size: 400;
+    font-weight: 700;
+    border: none;
+    display: inline;
+}
+
+#button :active{
     scale: 0.9;
-    background-color: rgb(51, 66, 66);
-    color: azure;
 }
 
 

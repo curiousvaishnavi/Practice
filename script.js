@@ -1,33 +1,34 @@
-//Random Quotes Generator
+let button = document.querySelector("button")
+let inner = document.querySelector("#inner")
+let h1 = document.querySelector("h1")
+let card = document.querySelector("#card")
+let container = document.querySelector(".container")
+let grow = 0
 
-    let main = document.querySelector("main")
-    let button = document.querySelector("button")
 
 button.addEventListener("click",function(){
-    let h1 = document.createElement("h1")
-    let c1 = Math.floor(Math.random()*256)
-    let c2 = Math.floor(Math.random()*256)
-    let c3 = Math.floor(Math.random()*256)
-    
+   
+    button.style.pointerEvents = "none"
 
-    let arr = ["Learn. Code. Repeat.","One bug at a time.","Progress > Perfection.","Turning coffee into code","From errors to excellence.","Every line of code counts."]
+    let int = 50 + Math.floor(Math.random()* 50)
+    
+    //Progress bar grow logic
+    let num = setInterval(function(){
+        grow++
+        h1.innerHTML = grow + "%"
+        inner.style.width = grow + "%"
+        
+    },int)
+     
+    //Progress bar must stop on 100% logic
+    setTimeout(function(){
+        clearTimeout(num)
+        button.innerHTML = "Downloaded"
+        button.style.pointerEvents = "none"
+        button.style.opacity = 0.5;   
+        button.style.cursor = "not-allowed"
+        card.style.userSelect = "none"
+        console.log("Downloaded in "+`${int/10}`+"seconds")
+    },int * 100)
 
-    let rad = (Math.floor(Math.random()*arr.length))
-    h1.innerHTML = arr[rad]
-    h1.style.color = `rgb(${c1},${c2},${c3})`
-    h1.style.position = "absolute"
-    h1.style.scale = (Math.floor(Math.random()*3))
-    main.append(h1)
-    
-//  To create random position of the quotes on the screen
-
-    let x =(Math.floor(Math.random()*100))
-    let y = (Math.floor(Math.random()*100))
-      
-    h1.style.left = x + "%"
-    h1.style.top = y + "%"
-    
-    let c4 = Math.floor(Math.random()*180)
-    h1.style.rotate = c4 + "deg"
-    
 })
